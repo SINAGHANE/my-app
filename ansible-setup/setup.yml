@@ -1,0 +1,13 @@
+---
+- name: Setup my app
+  hosts: webservers
+  tasks:
+    - name: Create app folder
+      file:
+        path: /tmp/my-app
+        state: directory
+
+    - name: Create index file
+      copy:
+        content: "Hello from Ansible!"
+        dest: /tmp/my-app/index.html
